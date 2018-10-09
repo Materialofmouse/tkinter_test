@@ -3,6 +3,11 @@
 import sys
 import tkinter as tk
 
+
+#Dockerfileに吐き出すのはできた
+#Dockerfileのインデントが糞だけどとりあえずイメージの作成できる
+#吐き出したイメージからコンテナの作成を行う
+
 class GUI_Config():
   def __init__(self):
     self.title = u'DockeFileに吐き出す'
