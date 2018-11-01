@@ -3,14 +3,9 @@
 import sys
 import tkinter as tk
 
-
-#Dockerfileに吐き出すのはできた
-#Dockerfileのインデントが糞だけどとりあえずイメージの作成できる
-#吐き出したイメージからコンテナの作成を行う
-
 class GUI_Config():
   def __init__(self):
-    self.title = u'DockeFileに吐き出す'
+    self.title = u'Output Dockerfile'
     self.window_size = u'400x300'
     self.back_light_color = 'white'
 
@@ -22,7 +17,7 @@ class Write():
     
   def write_list(self,command_str):
     command = 'apt-get install -y\n'
-    #make Dockerfile
+    
     for i in command_str:
       command += ('' + str(command_list[int(i)]) + ' \\\n')    
     
@@ -31,8 +26,6 @@ class Write():
     self.f.close()
     sys.exit()
 
-#gui settings
-#get check list
 def get_check(event):
   global com_str
   global w
@@ -42,7 +35,6 @@ def get_check(event):
   
   return w.write_list(com_str)
 
-#make checkbox
 def make_checkbox():
   check = []
   for i,var in enumerate(command_list):
@@ -56,11 +48,9 @@ def make_checkbox():
                                 height = 2,
                                 width = 10,
                                 bg = config.back_light_color))
-    #check[i].config()
     check[i].pack(padx=5,pady=5)
 
 
-#gui setting
 config = GUI_Config() 
 
 root = tk.Tk()
